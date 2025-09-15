@@ -1,8 +1,5 @@
-import { useReducer } from "react";
 import './App.css';
 import TodoList from "./components/TodoList";
-import { initialState, todoReducer } from "./reducers/todoReducer";
-import { TodoContext } from "./contexts/TodoContext";
 import {createBrowserRouter, NavLink, Outlet, RouterProvider} from "react-router";
 
 function DefaultLayout() {
@@ -23,18 +20,23 @@ function DefaultLayout() {
     </>
 }
 
+function ErrorPage() {
+    return <h1>Error page</h1>;
+}
+
 const routes = [
     {
-        path:'/',
+        path: '/',
         element: <DefaultLayout/>,
+        errorElement: <ErrorPage/>,
         children: [{
-            path:'',
+            path: '',
             element: <h1>Home Page</h1>
-        },{
-            path:'todo',
+        }, {
+            path: 'todo',
             element: <TodoList/>
-        },{
-            path:'about',
+        }, {
+            path: 'about',
             element: <h1>About Us</h1>
         }]
     }
@@ -43,17 +45,11 @@ const routes = [
 const router = createBrowserRouter(routes);
 
 function App() {
-  // the Hooks API manage component data state
-  const [state, dispatch] = useReducer(todoReducer, initialState);
-  const value = {state, dispatch}
-  return (
-    <div className="App">
-        <RouterProvider router={router}></RouterProvider>
-        {/*<DefaultLayout/>*/}
-      {/*<TodoContext.Provider value={value}>*/}
-      {/*  <TodoList/>*/}
-      {/*</TodoContext.Provider>*/}
-    </div>
-  );
+    return (
+        <div className="App">
+            <RouterProvider router={router}></RouterProvider>
+        </div>
+    );
 }
+
 export default App;

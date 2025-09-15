@@ -1,5 +1,6 @@
 import {NavLink, Outlet} from "react-router";
 import {Layout, Menu} from "antd";
+import {HomeOutlined, InfoCircleOutlined, ScheduleOutlined} from "@ant-design/icons";
 
 const { Header, Content, Footer } = Layout;
 
@@ -8,14 +9,17 @@ export function DefaultLayout() {
         {
             key: 'home',
             label: <NavLink to="/">Home</NavLink>,
+            icon: <HomeOutlined />
         },
         {
             key: 'todos',
             label: <NavLink to="/todos">TODO</NavLink>,
+            icon: <ScheduleOutlined />
         },
         {
             key: 'about',
             label: <NavLink to="/about">About</NavLink>,
+            icon: <InfoCircleOutlined />
         },
     ];
 

@@ -11,12 +11,17 @@
 .todo-item {
     width: 550px;
     border: 1px solid black;
-    padding: 5px;
-    margin-right: 15px;
+    margin: 0 5px;
     font-size: large;
+    background: #f9f9f9;
     &.done {
+        background: #6c757d;
         text-decoration: line-through;
     }
+}
+
+.todo-item-container > button {
+    margin: 0 5px;
 }
 
 .todo-group {
@@ -31,14 +36,12 @@
     width: 500px;
     height: 35px;
     margin: 0 auto;
-
 }
 
 .todo-generator-input {
     display: flex;
     flex: 1;
     font-size: large;
-    margin-right: 10px;
     height: 100%;
     padding: 0;
 }
@@ -53,4 +56,11 @@
     height: 100%;
     border: 2px;
     width: 80px;
+}
+
+.todo-edit-input {
+    display: flex;
+    margin: 0 auto;
+    width: 90%;
+    padding: 5px;
 }

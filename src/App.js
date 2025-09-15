@@ -2,7 +2,7 @@ import './App.css';
 import TodoList from "./components/TodoList";
 import {createBrowserRouter, RouterProvider} from "react-router";
 import {DefaultLayout} from "./DefaultLayout";
-import {TodoDetail} from "./TodoDetail";
+import {TodoDetail} from "./components/TodoDetail";
 
 function ErrorPage() {
     return <h1>Error page</h1>;
